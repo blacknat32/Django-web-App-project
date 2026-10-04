@@ -1,0 +1,16 @@
+###listings/templates/listings/about.html###
+
+<html>
+    <head><title>Merchex</title></head>
+    <body>
+        <h1>À propos</h1>
+        <p>Nous adorons merch !
+            <ul>
+                {% for info in info %}
+                <li>{{ info.name }}</li>
+                {% endfor %}
+            </ul> 
+        </p>
+    </body>
+</html>
+

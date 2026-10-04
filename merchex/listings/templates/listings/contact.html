@@ -1,0 +1,16 @@
+###listings/templates/listings/contact.html###
+
+<html>
+    <head><title>Merchex</title></head>
+    <body>
+        <h1>Contact</h1>
+        <p>Nous contacter :
+            <ul>
+                {% for help in help %}
+                <li>{{ help.name }}</li>
+                {% endfor %}
+            </ul>
+        </p>
+    </body>
+</html>
+

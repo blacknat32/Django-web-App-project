@@ -7,3 +7,9 @@ class Band(models.Model):
 
 class Listing(models.Model):
     name = models.fields.CharField(max_length=100)
+
+class Help(models.Model):
+    name = models.fields.CharField(max_length=100)
+
+class Info(models.Model):
+    name = models.fields.CharField(max_length=100)

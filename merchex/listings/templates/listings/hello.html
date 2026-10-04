@@ -1,0 +1,16 @@
+###listings/templates/listings/hello.html###
+
+<html>
+    <head><title>Merchex</title></head>
+    <body>
+        <h1>Hello Django !</h1>
+        <p>J'ai {{ bands|length }} groupes préférés.
+         <ul>
+            {% for band in bands %}
+            <li>{{ band.name }}</li>
+            {% endfor %}
+        </ul> 
+        </p>
+        <!-- TODO : liste des groupes -->
+    </body>
+</html>
