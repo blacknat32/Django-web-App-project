@@ -1,8 +1,9 @@
-###listings/templates/listings/contact.html###
+<!-- listings/templates/listings/contact.html -->
+{% extends 'listings/base.html' %}
 
-<html>
-    <head><title>Merchex</title></head>
-    <body>
+{% block content %}
+
+
         <h1>Contact</h1>
         <p>Nous contacter :
             <ul>
@@ -11,6 +12,7 @@
                 {% endfor %}
             </ul>
         </p>
-    </body>
-</html>
+
+
+{% endblock %}
 

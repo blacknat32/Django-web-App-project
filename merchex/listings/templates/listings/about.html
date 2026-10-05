@@ -1,8 +1,8 @@
-###listings/templates/listings/about.html###
+<!-- listings/templates/listings/about.html -->
+{% extends 'listings/base.html' %}
 
-<html>
-    <head><title>Merchex</title></head>
-    <body>
+{% block content %}
+
         <h1>À propos</h1>
         <p>Nous adorons merch !
             <ul>
@@ -11,6 +11,7 @@
                 {% endfor %}
             </ul> 
         </p>
-    </body>
-</html>
+
+
+{% endblock %}
 
