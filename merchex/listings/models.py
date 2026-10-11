@@ -25,11 +25,12 @@ class Listing(models.Model):
         Clothing = 'vêtements'
         Posters = 'affiches'
         Miscellaneous = 'divers'
-    name = models.fields.CharField(max_length=100)
+    title = models.fields.CharField(max_length=100)
     description = models.fields.CharField(max_length=1000)
     sold = models.fields.BooleanField(default=False)
     year = models.fields.IntegerField(blank=True, null=True)
     type = models.fields.CharField(choices=Type.choices, max_length=20)
+    band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
 
 class Help(models.Model):
     name = models.fields.CharField(max_length=100)
