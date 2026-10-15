@@ -19,6 +19,9 @@ class Band(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Band_create(models.Model):
+    name = models.fields.CharField(max_length=100)
 
 class Listing(models.Model):
     class Type(models.TextChoices):
@@ -33,8 +36,17 @@ class Listing(models.Model):
     type = models.fields.CharField(choices=Type.choices, max_length=20)
     band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
 
+class Listing_create(models.Model):
+    name = models.fields.CharField(max_length=100)
+
 class Help(models.Model):
     name = models.fields.CharField(max_length=100)
 
 class Info(models.Model):
     name = models.fields.CharField(max_length=100) 
+
+class Contact(models.Model):
+    name = models.fields.CharField(max_length=100)
+
+
+    

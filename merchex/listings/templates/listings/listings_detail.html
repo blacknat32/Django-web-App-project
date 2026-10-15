@@ -8,15 +8,16 @@
 
 <ul>
     <li>Type : {{ listing.get_type_display }}</li>
-    <li>Description : {{ listing.description }}</li>
-    <li>Année : {{ listing.year }}</li>
+    {% if listing.year %}
+        <li>Année : {{ listing.year }}</li>
+    {% endif %}
     <li>Vendue : {{ listing.sold|yesno }}</li>
      {% if listing.band %}
         <li>Groupe : {{ listing.band.name }}</li>
     {% endif %}
 </ul>
 
-<p>{{ listings.biography }}</p>
+<p> {{ listing.description }}</p>
 
 <a href="{% url 'listings-list' %}">Retour à tous les articles</a>
 

@@ -6,6 +6,7 @@
 
 <h1>Articles</h1>
 
+<a href="{% url 'listings-create' %}">Créer un nouveau listing</a>
 <ul>
    {% for listing in listings %}
      <li><a href="{% url 'listings-detail' listing.id %}">{{ listing.title }}</a></li>
