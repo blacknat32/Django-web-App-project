@@ -9,7 +9,11 @@
 <a href="{% url 'band-create' %}">Créer un nouveau groupe</a>
 <ul>
    {% for band in bands %}
-     <li><a href="{% url 'band-detail' band.id %}">{{ band.name }}</a></li>
+     <li>
+        <a href="{% url 'band-detail' band.id %}">{{ band.name }}</a>
+        - <a href="{% url 'band-change' band.id %}">[modifier]</a>
+        - <a href="{% url 'band-delete' band.id %}">[supprimer]</a>
+    </li>
    {% endfor %}
 </ul>
 

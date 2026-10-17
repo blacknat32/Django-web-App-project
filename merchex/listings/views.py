@@ -65,6 +65,38 @@ def band_create(request):
             'listings/band_create.html',
             {'form': form})
 
+def band_change(request, id):
+    band = Band.objects.get(id=id)
+
+    if request.method == 'POST':
+        form = BandForm(request.POST, instance=band)
+
+        if form.is_valid():
+                form.save()
+                return redirect('band-detail', band.id)
+
+    else:
+        form = BandForm(instance=band)
+
+    return render(request,
+            'listings/band_change.html',
+            {'form': form })
+
+def band_delete(request, id):
+    band = Band.objects.get(id=id)  # nécessaire pour GET et pour POST
+
+    if request.method == 'POST':
+        # supprimer le groupe de la base de données
+        band.delete()
+        # rediriger vers la liste des groupes
+        return redirect('band-list')
+
+    # pas besoin de « else » ici. Si c'est une demande GET, continuez simplement
+
+    return render(request,
+                    'listings/band_delete.html',
+                    {'band': band})
+
 def about(request):
     info = Info.objects.all()
     return render(request, 'listings/about.html', 
@@ -104,7 +136,37 @@ def listings_create(request):
             'listings/listings_create.html',
             {'form': form})
 
-      
+def listings_change(request, id):
+    listing = Listing.objects.get(id=id)
+
+    if request.method == 'POST':
+        form = ListingForm(request.POST, instance=listing)
+
+        if form.is_valid():
+                form.save()
+                return redirect('listings-detail', listing.id)
+
+    else:
+        form = ListingForm(instance=listing)
+
+    return render(request,
+            'listings/listings_change.html',
+            {'form': form })
+
+def listings_delete(request, id):
+    listing = Listing.objects.get(id=id)  # nécessaire pour GET et pour POST
+
+    if request.method == 'POST':
+        # supprimer l'annonce de la base de données
+        listing.delete()
+        # rediriger vers la liste des annonces
+        return redirect('listings-list')
+
+    # pas besoin de « else » ici. Si c'est une demande GET, continuez simplement
+
+    return render(request,
+                    'listings/listings_delete.html',
+                    {'listing': listing})
 
 
 
